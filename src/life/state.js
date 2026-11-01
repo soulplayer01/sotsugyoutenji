@@ -13,7 +13,7 @@ export function lifeReducer(state, action) {
     const choice=event.options.find(o=>o.id===action.id);
     if(!choice) return state;
     return {...state,flags:{...state.flags,...choice.changes},feedback:choice,
-      history:[...state.history,{eventId:event.id,stage:event.stage,age:event.age,place:event.place,title:event.title,text:event.text,choiceId:choice.id,label:choice.label,result:choice.result,tags:[...choice.tags],changes:{...choice.changes}}]};
+      history:[...state.history,{eventId:event.id,stage:event.stage,age:event.age,place:event.place,title:event.title,text:event.text,choiceId:choice.id,label:choice.label,result:choice.result,tags:[...choice.tags],behavior:choice.behavior,sourceIds:[...choice.sourceIds],mappingStatus:choice.mappingStatus,provenance:event.provenance,changes:{...choice.changes}}]};
   }
   if(action.type==='CONTINUE' && state.feedback) return {...state,feedback:null,index:Math.min(state.index+1,events.length-1),screen:state.index===events.length-1?'result':'play'};
   return state;
@@ -25,6 +25,6 @@ export function summarize(history) {
     adult:history.filter(h=>h.stage==='성인기'&&h.tags.includes(category)).length}));
 }
 export function lifeReceipt(state) {
-  return {version:'life-v2-prototype',locale:'ko',printerAvailable:false,currentAge:state.profile.age,route:routes[state.flags.route]?.label,history:state.history,occurrences:summarize(state.history),notice:'선택 태그의 등장 횟수이며 진단 점수나 성숙도 수치가 아닙니다.'};
+  return {version:'life-v2-prototype',locale:'ko',printerAvailable:false,currentAge:state.profile.age,route:routes[state.flags.route]?.label,history:state.history,occurrences:summarize(state.history),behaviorOccurrences:state.history.filter(h=>h.behavior),mappingPending:state.history.filter(h=>h.mappingStatus==='review'),notice:'선택 태그의 등장 횟수이며 진단 점수나 성숙도 수치가 아닙니다. 건강 관리와 도움 요청의 경향 연결은 검토 중입니다.'};
 }
 

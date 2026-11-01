@@ -1,0 +1,899 @@
+{
+  "file": "graduation_project_master_plan_coded_v5.xlsx",
+  "sha256": "01e1e677f9f7dc8550c3bf0e915bc39e775ecc9f37483ca11a36b2bf7f05da13",
+  "raw": [
+    {
+      "id": 1,
+      "text": "부모님께 처음 용돈을 드렸을 때",
+      "primary": "사회·역할",
+      "secondary": "타인배려",
+      "reason": "부모에게 받는 위치에서 부모를 지원하는 위치로 역할이 바뀐 경험",
+      "behavior": "가족·선후배 관계에서 역할을 맡음",
+      "sourceRange": "06_Research_Raw!A4:M4"
+    },
+    {
+      "id": 2,
+      "text": "혼자 병원에 가서 진료를 받고 약을 받았을 때",
+      "primary": "자립",
+      "secondary": null,
+      "reason": "생활에 필요한 일을 타인에게 맡기지 않고 스스로 처리한 경험",
+      "behavior": "생활과 결정을 스스로 처리함",
+      "sourceRange": "06_Research_Raw!A5:M5"
+    },
+    {
+      "id": 3,
+      "text": "월세나 공과금을 직접 냈을 때",
+      "primary": "책임",
+      "secondary": "자립",
+      "reason": "생활에 필요한 비용과 기한을 직접 감당한다는 점에서 책임을 1차로 분류",
+      "behavior": "해야 할 일·약속을 지킴",
+      "sourceRange": "06_Research_Raw!A6:M6"
+    },
+    {
+      "id": 4,
+      "text": "늦잠을 자고 싶었지만 해야 할 일을 위해 일어났을때",
+      "primary": "책임",
+      "secondary": "감정조절",
+      "reason": "현재의 욕구보다 해야 할 의무를 우선해 행동한 경험",
+      "behavior": "해야 할 일·약속을 지킴",
+      "sourceRange": "06_Research_Raw!A7:M7"
+    },
+    {
+      "id": 5,
+      "text": "실수를 인정하고 먼저 사과했을 때",
+      "primary": "책임",
+      "secondary": "타인배려",
+      "reason": "자신의 잘못과 그 결과를 인정하고 직접 대응한 경험",
+      "behavior": "실수·문제 상황에 대응함",
+      "sourceRange": "06_Research_Raw!A8:M8"
+    },
+    {
+      "id": 6,
+      "text": "화가 났지만 감정을 참고 대화했을 때",
+      "primary": "감정조절",
+      "secondary": "타인배려",
+      "reason": "강한 감정에 즉각 반응하지 않고 자신의 반응을 조절한 경험",
+      "behavior": "감정·충동을 조절함",
+      "sourceRange": "06_Research_Raw!A9:M9"
+    },
+    {
+      "id": 7,
+      "text": "후배나 동생에게 조언을 해주었을 때",
+      "primary": "사회·역할",
+      "secondary": "타인배려",
+      "reason": "선배나 연장자로서 자신이 누군가를 돕는 역할에 있다고 인식한 경험",
+      "behavior": "가족·선후배 관계에서 역할을 맡음",
+      "sourceRange": "06_Research_Raw!A10:M10"
+    },
+    {
+      "id": 8,
+      "text": "친구의 고민을 끝까지 들어주었을 때",
+      "primary": "타인배려",
+      "secondary": null,
+      "reason": "구체적인 상대의 감정과 상황에 시간을 들여 주의를 기울인 경험",
+      "behavior": "상대의 말을 듣고 입장을 이해함",
+      "sourceRange": "06_Research_Raw!A11:M11"
+    },
+    {
+      "id": 9,
+      "text": "누군가를 위해 내 시간을 양보했을 때",
+      "primary": "타인배려",
+      "secondary": null,
+      "reason": "자신의 편의보다 특정 타인의 필요를 우선한 경험",
+      "behavior": "타인을 챙기고 배려 행동을 함",
+      "sourceRange": "06_Research_Raw!A12:M12"
+    },
+    {
+      "id": 10,
+      "text": "미래를 생각하며 돈을 아껴 썼을 때",
+      "primary": "미래지향",
+      "secondary": "책임",
+      "reason": "현재의 소비보다 이후의 필요와 결과를 고려한 선택",
+      "behavior": "돈·물건 등 자원을 관리함",
+      "sourceRange": "06_Research_Raw!A13:M13"
+    },
+    {
+      "id": 11,
+      "text": "부모님의 고생을 이해하게 되었을 때",
+      "primary": "타인배려",
+      "secondary": "사회·역할",
+      "reason": "부모를 자신의 보호자라는 위치만이 아니라 한 개인의 사정과 감정을 가진 사람으로 이해한 경험",
+      "behavior": "상대의 말을 듣고 입장을 이해함",
+      "sourceRange": "06_Research_Raw!A14:M14"
+    },
+    {
+      "id": 12,
+      "text": "혼자 계약이나 행정 절차를 처리했을 때",
+      "primary": "자립",
+      "secondary": "책임",
+      "reason": "복잡한 생활 절차를 스스로 판단하고 처리한 경험",
+      "behavior": "생활과 결정을 스스로 처리함",
+      "sourceRange": "06_Research_Raw!A15:M15"
+    },
+    {
+      "id": 13,
+      "text": "가족을 대신해 중요한 결정을 했을 때",
+      "primary": "사회·역할",
+      "secondary": "책임",
+      "reason": "가족 구성원으로서 자신이 결정과 부담을 맡는 위치가 된 경험",
+      "behavior": "가족·선후배 관계에서 역할을 맡음",
+      "sourceRange": "06_Research_Raw!A16:M16"
+    },
+    {
+      "id": 14,
+      "text": "아픈 사람을 돌봐주었을 때",
+      "primary": "타인배려",
+      "secondary": null,
+      "reason": "자신보다 도움이 필요한 상대의 상태를 우선해 행동한 경험",
+      "behavior": "타인을 챙기고 배려 행동을 함",
+      "sourceRange": "06_Research_Raw!A17:M17"
+    },
+    {
+      "id": 15,
+      "text": "하기 싫은 일을 책임감 때문에 끝냈을 때",
+      "primary": "책임",
+      "secondary": "감정조절",
+      "reason": "기분이나 선호와 상관없이 맡은 일을 끝까지 수행한 경험",
+      "behavior": "해야 할 일·약속을 지킴",
+      "sourceRange": "06_Research_Raw!A18:M18"
+    },
+    {
+      "id": 16,
+      "text": "계획을 세우고 그대로 실천했을 때",
+      "primary": "미래지향",
+      "secondary": "책임",
+      "reason": "미리 정한 목표와 이후의 결과를 생각해 현재 행동을 조직한 경험",
+      "behavior": "계획하고 미리 준비함",
+      "sourceRange": "06_Research_Raw!A19:M19"
+    },
+    {
+      "id": 17,
+      "text": "충동구매를 참았을 때",
+      "primary": "미래지향",
+      "secondary": "감정조절",
+      "reason": "즉각적인 소비 욕구보다 이후의 필요와 자원을 고려한 경험",
+      "behavior": "돈·물건 등 자원을 관리함",
+      "sourceRange": "06_Research_Raw!A20:M20"
+    },
+    {
+      "id": 18,
+      "text": "술자리에서 스스로 적당한 선에서 멈췄을 때",
+      "primary": "감정조절",
+      "secondary": "책임",
+      "reason": "욕구나 분위기에 휩쓸리지 않고 자신의 행동을 스스로 조절한 경험",
+      "behavior": "감정·충동을 조절함",
+      "sourceRange": "06_Research_Raw!A21:M21"
+    },
+    {
+      "id": 19,
+      "text": "내 잘못이 아니어도 상황을 해결하기 위해 움직였을 때",
+      "primary": "책임",
+      "secondary": "사회·역할",
+      "reason": "책임 소재와 별개로 필요한 대응을 자신이 맡아 상황을 수습한 경험",
+      "behavior": "실수·문제 상황에 대응함",
+      "sourceRange": "06_Research_Raw!A22:M22"
+    },
+    {
+      "id": 20,
+      "text": "다른 사람의 입장을 먼저 생각했을 때",
+      "primary": "타인배려",
+      "secondary": null,
+      "reason": "자신의 입장보다 상대의 사정과 관점을 먼저 고려한 경험",
+      "behavior": "상대의 말을 듣고 입장을 이해함",
+      "sourceRange": "06_Research_Raw!A23:M23"
+    },
+    {
+      "id": 21,
+      "text": "누군가에게 감사하다는 말을 먼저 했을 때",
+      "primary": "타인배려",
+      "secondary": null,
+      "reason": "상대가 해준 행동과 마음을 인식하고 먼저 표현한 경험",
+      "behavior": "타인을 챙기고 배려 행동을 함",
+      "sourceRange": "06_Research_Raw!A24:M24"
+    },
+    {
+      "id": 22,
+      "text": "부모님에게 걱정을 끼치지 않으려고 했을 때",
+      "primary": "사회·역할",
+      "secondary": "타인배려",
+      "reason": "가족 안에서 자신도 상대에게 영향을 주는 구성원이라는 점을 의식한 경험",
+      "behavior": "가족·선후배 관계에서 역할을 맡음",
+      "sourceRange": "06_Research_Raw!A25:M25"
+    },
+    {
+      "id": 23,
+      "text": "혼자 여행을 계획하고 문제를 해결했을 때",
+      "primary": "자립",
+      "secondary": "미래지향",
+      "reason": "낯선 상황에서 필요한 판단과 해결을 스스로 수행한 경험",
+      "behavior": "생활과 결정을 스스로 처리함",
+      "sourceRange": "06_Research_Raw!A26:M26"
+    },
+    {
+      "id": 24,
+      "text": "집안일을 당연하게 하게 되었을 때",
+      "primary": "사회·역할",
+      "secondary": "책임",
+      "reason": "가족생활을 유지하는 일을 누군가의 일이 아니라 자신의 역할로 받아들인 경험",
+      "behavior": "가족·선후배 관계에서 역할을 맡음",
+      "sourceRange": "06_Research_Raw!A27:M27"
+    },
+    {
+      "id": 25,
+      "text": "피곤해도 약속을 지켰을 때",
+      "primary": "책임",
+      "secondary": "감정조절",
+      "reason": "자신의 상태와 상관없이 이미 한 약속의 결과를 책임지고 이행한 경험",
+      "behavior": "해야 할 일·약속을 지킴",
+      "sourceRange": "06_Research_Raw!A28:M28"
+    },
+    {
+      "id": 26,
+      "text": "누군가의 성공을 진심으로 축하해 주었을 때",
+      "primary": "타인배려",
+      "secondary": null,
+      "reason": "상대의 좋은 일을 자신의 감정과 별개로 긍정하고 함께 기뻐한 경험",
+      "behavior": "타인을 챙기고 배려 행동을 함",
+      "sourceRange": "06_Research_Raw!A29:M29"
+    },
+    {
+      "id": 27,
+      "text": "SNS에서 싸우지 않고 그냥 넘겼을 때",
+      "primary": "감정조절",
+      "secondary": "타인배려",
+      "reason": "자극을 받아도 즉각적으로 공격하거나 반응하지 않은 경험",
+      "behavior": "감정·충동을 조절함",
+      "sourceRange": "06_Research_Raw!A30:M30"
+    },
+    {
+      "id": 28,
+      "text": "건강을 위해 생활습관을 바꾸려고 했을 때",
+      "primary": "미래지향",
+      "secondary": "감정조절",
+      "reason": "현재의 편안함보다 장기적인 건강과 지속 가능한 생활을 고려한 경험",
+      "behavior": "건강·자기 상태를 관리함",
+      "sourceRange": "06_Research_Raw!A31:M31"
+    },
+    {
+      "id": 29,
+      "text": "돈보다 사람과의 관계를 선택했을 때",
+      "primary": "타인배려",
+      "secondary": null,
+      "reason": "경제적 이익보다 사람과의 관계를 더 중요하게 판단한 경험",
+      "behavior": "타인을 챙기고 배려 행동을 함",
+      "sourceRange": "06_Research_Raw!A32:M32"
+    },
+    {
+      "id": 30,
+      "text": "\"정답\"보다 \"내가 책임질 수 있는 선택\"을 했을 때",
+      "primary": "책임",
+      "secondary": "자립",
+      "reason": "외부의 정답보다 자신이 선택한 결과를 감당할 수 있는지를 기준으로 판단한 경험",
+      "behavior": "생활과 결정을 스스로 처리함",
+      "sourceRange": "06_Research_Raw!A33:M33"
+    },
+    {
+      "id": 31,
+      "text": "어린아이에게 자리를 양보했을 때",
+      "primary": "타인배려",
+      "secondary": "사회·역할",
+      "reason": "도움이 더 필요한 특정 상대의 상황을 고려해 자신의 편의를 양보한 경험",
+      "behavior": "타인을 챙기고 배려 행동을 함",
+      "sourceRange": "06_Research_Raw!A34:M34"
+    },
+    {
+      "id": 32,
+      "text": "잃어버린 물건을 주워 신고했을 때",
+      "primary": "사회·역할",
+      "secondary": "책임",
+      "reason": "개인적 이익과 무관하게 사회의 규칙과 타인에 대한 공공적 책임을 따른 경험",
+      "behavior": "공공·관계 규범과 예절을 지킴",
+      "sourceRange": "06_Research_Raw!A35:M35"
+    },
+    {
+      "id": 33,
+      "text": "쓰레기를 그냥 지나치지 않고 주웠을 때",
+      "primary": "사회·역할",
+      "secondary": "책임",
+      "reason": "공공 공간을 유지하는 일을 자신과 무관한 일로 두지 않은 경험",
+      "behavior": "공공·관계 규범과 예절을 지킴",
+      "sourceRange": "06_Research_Raw!A36:M36"
+    },
+    {
+      "id": 34,
+      "text": "늦을 것 같아 먼저 연락했을 때",
+      "primary": "책임",
+      "secondary": "타인배려",
+      "reason": "자신의 상황이 상대에게 미칠 영향을 알고 미리 대응한 경험",
+      "behavior": "해야 할 일·약속을 지킴",
+      "sourceRange": "06_Research_Raw!A37:M37"
+    },
+    {
+      "id": 35,
+      "text": "상대방의 입장을 이해하려고 노력했을 때",
+      "primary": "타인배려",
+      "secondary": null,
+      "reason": "상대의 관점과 사정을 의식적으로 이해하려 한 경험",
+      "behavior": "상대의 말을 듣고 입장을 이해함",
+      "sourceRange": "06_Research_Raw!A38:M38"
+    },
+    {
+      "id": 36,
+      "text": "다른 사람의 실수를 크게 탓하지 않았을 때",
+      "primary": "타인배려",
+      "secondary": "감정조절",
+      "reason": "실수한 상대의 상황을 고려하고 과도한 비난을 줄인 경험",
+      "behavior": "상대의 말을 듣고 입장을 이해함",
+      "sourceRange": "06_Research_Raw!A39:M39"
+    },
+    {
+      "id": 37,
+      "text": "부모님께 안부 전화를 먼저 했을 때",
+      "primary": "사회·역할",
+      "secondary": "타인배려",
+      "reason": "부모에게 돌봄과 관심을 받기만 하던 위치에서 먼저 살피는 가족 역할로 이동한 경험",
+      "behavior": "가족·선후배 관계에서 역할을 맡음",
+      "sourceRange": "06_Research_Raw!A40:M40"
+    },
+    {
+      "id": 38,
+      "text": "후배에게 밥을 사주었을 때",
+      "primary": "사회·역할",
+      "secondary": "타인배려",
+      "reason": "선배나 연장자로서 자신이 베푸는 쪽의 역할을 맡았다고 느낀 경험",
+      "behavior": "가족·선후배 관계에서 역할을 맡음",
+      "sourceRange": "06_Research_Raw!A41:M41"
+    },
+    {
+      "id": 39,
+      "text": "친구의 성공을 질투하지 않고 응원했을 때",
+      "primary": "감정조절",
+      "secondary": "타인배려",
+      "reason": "질투라는 자신의 감정을 인식하고 그것에 휘둘리지 않은 채 상대를 지지한 경험",
+      "behavior": "감정·충동을 조절함",
+      "sourceRange": "06_Research_Raw!A42:M42"
+    },
+    {
+      "id": 40,
+      "text": "누군가에게 먼저 도움을 요청할 수 있었을 때",
+      "primary": "자립",
+      "secondary": null,
+      "reason": "모든 것을 혼자 하는 것이 아니라 자신의 한계를 판단하고 필요한 자원을 스스로 선택해 요청한 경험",
+      "behavior": "한계·모름을 인정하고 도움을 주고받음",
+      "sourceRange": "06_Research_Raw!A43:M43"
+    },
+    {
+      "id": 41,
+      "text": "모르는 것을 솔직하게 인정했을 때",
+      "primary": "책임",
+      "secondary": "감정조절",
+      "reason": "자신이 모르는 상태를 숨기지 않고 그 사실을 인정한다는 점에서 자기 행동에 대한 책임으로 임시 분류",
+      "behavior": "한계·모름을 인정하고 도움을 주고받음",
+      "sourceRange": "06_Research_Raw!A44:M44"
+    },
+    {
+      "id": 42,
+      "text": "불필요한 거짓말을 하지 않았을 때",
+      "primary": "사회·역할",
+      "secondary": "책임",
+      "reason": "사회적 관계에서 지켜야 할 윤리와 신뢰의 규범을 의식한 경험",
+      "behavior": "공공·관계 규범과 예절을 지킴",
+      "sourceRange": "06_Research_Raw!A45:M45"
+    },
+    {
+      "id": 43,
+      "text": "남의 험담에 끼지 않았을 때",
+      "primary": "사회·역할",
+      "secondary": "타인배려",
+      "reason": "집단 안에서 관계를 해치는 행동에 참여하지 않겠다는 사회적 판단을 한 경험",
+      "behavior": "공공·관계 규범과 예절을 지킴",
+      "sourceRange": "06_Research_Raw!A46:M46"
+    },
+    {
+      "id": 44,
+      "text": "식당에서 먹은 자리를 깨끗하게 정리했을 때",
+      "primary": "사회·역할",
+      "secondary": "타인배려",
+      "reason": "다음 사용자와 일하는 사람까지 고려한 공공장소의 역할과 예절을 의식한 경험",
+      "behavior": "공공·관계 규범과 예절을 지킴",
+      "sourceRange": "06_Research_Raw!A47:M47"
+    },
+    {
+      "id": 45,
+      "text": "아플 때 스스로 몸을 챙겼을 때",
+      "primary": "자립",
+      "secondary": "미래지향",
+      "reason": "자신의 상태를 스스로 확인하고 필요한 조치를 취한 경험",
+      "behavior": "건강·자기 상태를 관리함",
+      "sourceRange": "06_Research_Raw!A48:M48"
+    },
+    {
+      "id": 46,
+      "text": "미래를 위해 저축을 시작했을 때",
+      "primary": "미래지향",
+      "secondary": null,
+      "reason": "현재의 소비를 줄여 장기적인 필요를 준비하기 시작한 경험",
+      "behavior": "돈·물건 등 자원을 관리함",
+      "sourceRange": "06_Research_Raw!A49:M49"
+    },
+    {
+      "id": 47,
+      "text": "계약서나 약관을 끝까지 읽어봤을 때",
+      "primary": "책임",
+      "secondary": "미래지향",
+      "reason": "동의하기 전에 조건과 이후의 결과를 스스로 확인하려 한 경험",
+      "behavior": "생활과 결정을 스스로 처리함",
+      "sourceRange": "06_Research_Raw!A50:M50"
+    },
+    {
+      "id": 48,
+      "text": "무언가를 버리기 전에 오래 고민했을 때",
+      "primary": "미래지향",
+      "secondary": "감정조절",
+      "reason": "즉각적으로 처분하지 않고 이후의 필요나 가치를 생각했다는 점에서 미래지향으로 임시 분류",
+      "behavior": "돈·물건 등 자원을 관리함",
+      "sourceRange": "06_Research_Raw!A51:M51"
+    },
+    {
+      "id": 49,
+      "text": "오래 연락하지 못했던 사람에게 먼저 연락했을 때",
+      "primary": "타인배려",
+      "secondary": "사회·역할",
+      "reason": "관계를 유지하기 위해 상대에게 먼저 관심과 행동을 보인 경험",
+      "behavior": "타인을 챙기고 배려 행동을 함",
+      "sourceRange": "06_Research_Raw!A52:M52"
+    },
+    {
+      "id": 50,
+      "text": "가족 행사에 시간을 내어 참석했을 때",
+      "primary": "사회·역할",
+      "secondary": "타인배려",
+      "reason": "개인 일정만이 아니라 가족 구성원으로서의 역할을 고려한 경험",
+      "behavior": "가족·선후배 관계에서 역할을 맡음",
+      "sourceRange": "06_Research_Raw!A53:M53"
+    },
+    {
+      "id": 51,
+      "text": "내 의견과 달라도 상대의 말을 끝까지 들었을 때",
+      "primary": "타인배려",
+      "secondary": "감정조절",
+      "reason": "자신과 다른 관점의 상대를 존중하고 충분히 들으려 한 경험",
+      "behavior": "상대의 말을 듣고 입장을 이해함",
+      "sourceRange": "06_Research_Raw!A54:M54"
+    },
+    {
+      "id": 52,
+      "text": "실수한 사람을 한 번 더 믿어주었을 때",
+      "primary": "타인배려",
+      "secondary": "감정조절",
+      "reason": "상대의 한 번의 실수만으로 판단하지 않고 다시 기회를 준 경험",
+      "behavior": "상대의 말을 듣고 입장을 이해함",
+      "sourceRange": "06_Research_Raw!A55:M55"
+    },
+    {
+      "id": 53,
+      "text": "혼자 밥을 먹는 것이 자연스러워졌을 때",
+      "primary": "자립",
+      "secondary": null,
+      "reason": "타인의 동행 여부와 관계없이 혼자 행동하는 것을 자연스럽게 받아들인 경험",
+      "behavior": "생활과 결정을 스스로 처리함",
+      "sourceRange": "06_Research_Raw!A56:M56"
+    },
+    {
+      "id": 54,
+      "text": "누군가에게 \"고생했어\"라고 진심으로 말했을 때",
+      "primary": "타인배려",
+      "secondary": null,
+      "reason": "상대가 들인 노력과 감정을 인식하고 이를 언어로 표현한 경험",
+      "behavior": "타인을 챙기고 배려 행동을 함",
+      "sourceRange": "06_Research_Raw!A57:M57"
+    },
+    {
+      "id": 55,
+      "text": "몸이 피곤해도 해야 할 일을 먼저 끝냈을 때",
+      "primary": "책임",
+      "secondary": "감정조절",
+      "reason": "자신의 상태보다 맡은 의무의 완수를 우선한 경험",
+      "behavior": "해야 할 일·약속을 지킴",
+      "sourceRange": "06_Research_Raw!A58:M58"
+    },
+    {
+      "id": 56,
+      "text": "계산할 때 더치페이나 순서를 자연스럽게 맞췄을 때",
+      "primary": "사회·역할",
+      "secondary": "타인배려",
+      "reason": "함께 있는 사람들과의 관계에서 필요한 규칙과 순서를 자연스럽게 조정한 경험",
+      "behavior": "공공·관계 규범과 예절을 지킴",
+      "sourceRange": "06_Research_Raw!A59:M59"
+    },
+    {
+      "id": 57,
+      "text": "약속 시간보다 조금 먼저 도착했을 때",
+      "primary": "책임",
+      "secondary": "타인배려",
+      "reason": "약속을 지키고 상대에게 불편을 주지 않기 위해 미리 행동한 경험",
+      "behavior": "해야 할 일·약속을 지킴",
+      "sourceRange": "06_Research_Raw!A60:M60"
+    },
+    {
+      "id": 58,
+      "text": "필요한 물건을 미리 준비하는 습관이 생겼을 때",
+      "primary": "미래지향",
+      "secondary": "책임",
+      "reason": "앞으로 필요한 상황을 예측해 현재 행동을 준비하는 경험",
+      "behavior": "계획하고 미리 준비함",
+      "sourceRange": "06_Research_Raw!A61:M61"
+    },
+    {
+      "id": 59,
+      "text": "자신의 한계를 인정하고 휴식을 선택했을 때",
+      "primary": "감정조절",
+      "secondary": "미래지향",
+      "reason": "현재 상태를 인식하고 무리하게 지속하기보다 스스로 행동을 조절한 경험",
+      "behavior": "건강·자기 상태를 관리함",
+      "sourceRange": "06_Research_Raw!A62:M62"
+    },
+    {
+      "id": 60,
+      "text": "다른 사람의 도움에 부끄러워하지 않고 감사했을 때",
+      "primary": "타인배려",
+      "secondary": null,
+      "reason": "도움을 약함으로만 보지 않고 상대의 행동을 인정하고 감사한 경험",
+      "behavior": "한계·모름을 인정하고 도움을 주고받음",
+      "sourceRange": "06_Research_Raw!A63:M63"
+    }
+  ],
+  "behaviors": [
+    {
+      "id": "B01",
+      "name": "생활과 결정을 스스로 처리함",
+      "criterion": "병원·계약·여행·혼밥처럼 생활상의 처리나 판단을 본인이 직접 수행",
+      "count": 6,
+      "rawIds": [
+        2,
+        12,
+        23,
+        30,
+        47,
+        53
+      ],
+      "draftMapping": "자립",
+      "note": "‘혼자’라는 표현보다 실제 처리·판단 행동에 초점",
+      "tags": [
+        "자립"
+      ],
+      "mappingStatus": "draft",
+      "sourceRange": "15_객관적행동분류_12개!A5:H5"
+    },
+    {
+      "id": "B02",
+      "name": "해야 할 일·약속을 지킴",
+      "criterion": "기분·피로와 관계없이 해야 할 일, 납부, 약속, 시간을 지킴",
+      "count": 7,
+      "rawIds": [
+        3,
+        4,
+        15,
+        25,
+        34,
+        55,
+        57
+      ],
+      "draftMapping": "책임",
+      "note": "행동 결과보다 ‘이행’이라는 공통 행동으로 묶음",
+      "tags": [
+        "책임"
+      ],
+      "mappingStatus": "draft",
+      "sourceRange": "15_객관적행동분류_12개!A6:H6"
+    },
+    {
+      "id": "B03",
+      "name": "실수·문제 상황에 대응함",
+      "criterion": "실수나 문제가 생긴 뒤 인정·사과·수습·해결을 위해 움직임",
+      "count": 2,
+      "rawIds": [
+        5,
+        19
+      ],
+      "draftMapping": "책임",
+      "note": "표본은 적지만 행동 형태가 분명해 별도 유지",
+      "tags": [
+        "책임"
+      ],
+      "mappingStatus": "draft",
+      "sourceRange": "15_객관적행동분류_12개!A7:H7"
+    },
+    {
+      "id": "B04",
+      "name": "상대의 말을 듣고 입장을 이해함",
+      "criterion": "경청, 관점 이해, 관용처럼 상대의 생각·상황을 받아들이는 행동",
+      "count": 7,
+      "rawIds": [
+        8,
+        11,
+        20,
+        35,
+        36,
+        51,
+        52
+      ],
+      "draftMapping": "타인배려",
+      "note": "‘배려 행동’과 달리 이해·수용 쪽",
+      "tags": [
+        "타인배려"
+      ],
+      "mappingStatus": "draft",
+      "sourceRange": "15_객관적행동분류_12개!A8:H8"
+    },
+    {
+      "id": "B05",
+      "name": "타인을 챙기고 배려 행동을 함",
+      "criterion": "시간 양보, 돌봄, 축하, 연락, 관계 우선처럼 실제 행동으로 챙김",
+      "count": 8,
+      "rawIds": [
+        9,
+        14,
+        21,
+        26,
+        29,
+        31,
+        49,
+        54
+      ],
+      "draftMapping": "타인배려",
+      "note": "마음보다 실제 행동에 초점",
+      "tags": [
+        "타인배려"
+      ],
+      "mappingStatus": "draft",
+      "sourceRange": "15_객관적행동분류_12개!A9:H9"
+    },
+    {
+      "id": "B06",
+      "name": "가족·선후배 관계에서 역할을 맡음",
+      "criterion": "부모·가족·후배 등 관계에서 챙기거나 결정하고 참여하는 위치가 됨",
+      "count": 8,
+      "rawIds": [
+        1,
+        7,
+        13,
+        22,
+        24,
+        37,
+        38,
+        50
+      ],
+      "draftMapping": "사회·역할",
+      "note": "가족/선후배라는 관계 구조가 공통점",
+      "tags": [
+        "사회·역할"
+      ],
+      "mappingStatus": "draft",
+      "sourceRange": "15_객관적행동분류_12개!A10:H10"
+    },
+    {
+      "id": "B07",
+      "name": "감정·충동을 조절함",
+      "criterion": "화·질투·음주·온라인 갈등 등 즉각적인 감정이나 충동을 억제·조절",
+      "count": 4,
+      "rawIds": [
+        6,
+        18,
+        27,
+        39
+      ],
+      "draftMapping": "감정조절",
+      "note": "가장 직접적으로 관찰 가능한 조절 행동",
+      "tags": [
+        "감정조절"
+      ],
+      "mappingStatus": "draft",
+      "sourceRange": "15_객관적행동분류_12개!A11:H11"
+    },
+    {
+      "id": "B08",
+      "name": "돈·물건 등 자원을 관리함",
+      "criterion": "절약·저축·소비 억제·물건 처분처럼 자원을 바로 쓰지 않고 관리",
+      "count": 4,
+      "rawIds": [
+        10,
+        17,
+        46,
+        48
+      ],
+      "draftMapping": "미래지향",
+      "note": "‘미래’ 의미부여보다 실제 자원 관리 행동으로 명명",
+      "tags": [
+        "미래지향"
+      ],
+      "mappingStatus": "draft",
+      "sourceRange": "15_객관적행동분류_12개!A12:H12"
+    },
+    {
+      "id": "B09",
+      "name": "계획하고 미리 준비함",
+      "criterion": "계획을 세워 실행하거나 필요한 것을 사전에 준비",
+      "count": 2,
+      "rawIds": [
+        16,
+        58
+      ],
+      "draftMapping": "미래지향",
+      "note": "단순하고 관찰 가능한 행동",
+      "tags": [
+        "미래지향"
+      ],
+      "mappingStatus": "draft",
+      "sourceRange": "15_객관적행동분류_12개!A13:H13"
+    },
+    {
+      "id": "B10",
+      "name": "건강·자기 상태를 관리함",
+      "criterion": "생활습관을 바꾸고, 아플 때 챙기고, 한계를 인정해 휴식함",
+      "count": 3,
+      "rawIds": [
+        28,
+        45,
+        59
+      ],
+      "draftMapping": "미래지향 / 감정조절",
+      "note": "한 축으로 고정하기보다 작품화 단계에서 선택 가능",
+      "tags": [],
+      "mappingStatus": "review",
+      "sourceRange": "15_객관적행동분류_12개!A14:H14"
+    },
+    {
+      "id": "B11",
+      "name": "공공·관계 규범과 예절을 지킴",
+      "criterion": "유실물 신고, 쓰레기 줍기, 정직, 험담 자제, 식당 정리, 계산 순서 등",
+      "count": 6,
+      "rawIds": [
+        32,
+        33,
+        42,
+        43,
+        44,
+        56
+      ],
+      "draftMapping": "사회·역할",
+      "note": "‘사회성’보다 실제 규범·예절 행동에 초점",
+      "tags": [
+        "사회·역할"
+      ],
+      "mappingStatus": "draft",
+      "sourceRange": "15_객관적행동분류_12개!A15:H15"
+    },
+    {
+      "id": "B12",
+      "name": "한계·모름을 인정하고 도움을 주고받음",
+      "criterion": "도움을 요청하거나 모름을 인정하고, 받은 도움을 받아들이고 감사함",
+      "count": 3,
+      "rawIds": [
+        40,
+        41,
+        60
+      ],
+      "draftMapping": "자립 / 감정조절",
+      "note": "기존 6축 중 어디에 연결할지는 작품 디자인 단계에서 검토",
+      "tags": [],
+      "mappingStatus": "review",
+      "sourceRange": "15_객관적행동분류_12개!A16:H16"
+    }
+  ],
+  "categories": [
+    {
+      "code": "R",
+      "name": "책임",
+      "definition": "자신의 선택·행동의 결과를 자신이 맡고 대응하는 변화",
+      "boundary": "자립=혼자 해결하는 능력 / 책임=결과를 맡는 태도",
+      "sourceRange": "05_Categories!A4:H4"
+    },
+    {
+      "code": "I",
+      "name": "자립",
+      "definition": "타인에게 결정이나 해결을 맡기기보다 스스로 판단·행동하는 변화",
+      "boundary": "책임=결과 수용 / 자립=판단·해결의 주체가 자신",
+      "sourceRange": "05_Categories!A5:H5"
+    },
+    {
+      "code": "O",
+      "name": "타인배려",
+      "definition": "자신의 입장뿐 아니라 구체적인 타인의 감정·사정을 고려하는 변화",
+      "boundary": "사회·역할=집단/가족 속 역할 / 타인=한 사람의 입장과 감정",
+      "sourceRange": "05_Categories!A6:H6"
+    },
+    {
+      "code": "E",
+      "name": "감정조절",
+      "definition": "감정에 즉각 반응하기보다 자신의 상태를 인식하고 조절하는 변화",
+      "boundary": "타인배려=상대 중심 / 감정조절=자신의 반응을 다루는 것",
+      "sourceRange": "05_Categories!A7:H7"
+    },
+    {
+      "code": "F",
+      "name": "미래지향",
+      "definition": "현재의 만족보다 이후의 결과와 지속 가능성을 고려하는 변화",
+      "boundary": "책임=이미 선택한 것의 결과 / 미래=앞으로의 결과를 미리 고려",
+      "sourceRange": "05_Categories!A8:H8"
+    },
+    {
+      "code": "S",
+      "name": "사회·역할",
+      "definition": "가족·학교·직장·사회 속에서 자신이 맡는 역할과 관계를 인식하는 변화",
+      "boundary": "타인배려=개인 대 개인 / 사회·역할=집단 속 자신의 위치와 책임",
+      "sourceRange": "05_Categories!A9:H9"
+    }
+  ],
+  "mappingExamples": [
+    {
+      "A1": "객관적 행동 분류 → 결과 경향 (현재 메인 흐름)"
+    },
+    {
+      "A2": "원문과 핵심 키워드를 바탕으로 행동 묶음을 만들고, 이를 웹 테스트의 6개 결과 경향으로 단순화하는 흐름이다."
+    },
+    {
+      "A4": "수집 경험",
+      "C4": "→",
+      "D4": "객관적 행동 묶음",
+      "F4": "→",
+      "G4": "결과 경향",
+      "I4": "테스트에서 보여주는 것"
+    },
+    {
+      "A5": "혼자 계약을 처리했다",
+      "C5": "→",
+      "D5": "생활과 결정을 스스로 처리함",
+      "F5": "→",
+      "G5": "자립",
+      "I5": "‘스스로 해내는 순간’에서 어른스러움을 느끼는 경향"
+    },
+    {
+      "A6": "피곤해도 약속을 지켰다",
+      "C6": "→",
+      "D6": "해야 할 일·약속을 지킴",
+      "F6": "→",
+      "G6": "책임",
+      "I6": "‘내가 맡은 것을 지키는 순간’에서 어른스러움을 느끼는 경향"
+    },
+    {
+      "A7": "친구 말을 끝까지 들었다",
+      "C7": "→",
+      "D7": "상대의 말을 듣고 입장을 이해함",
+      "F7": "→",
+      "G7": "타인배려",
+      "I7": "‘다른 사람을 바라보는 방식의 변화’에서 어른스러움을 느끼는 경향"
+    },
+    {
+      "A8": "화를 참고 대화했다",
+      "C8": "→",
+      "D8": "감정·충동을 조절함",
+      "F8": "→",
+      "G8": "감정조절",
+      "I8": "‘바로 반응하지 않게 된 순간’에서 어른스러움을 느끼는 경향"
+    },
+    {
+      "A9": "저축을 시작했다",
+      "C9": "→",
+      "D9": "돈·물건 등 자원을 관리함",
+      "F9": "→",
+      "G9": "미래지향",
+      "I9": "‘당장보다 앞으로를 보게 된 순간’에서 어른스러움을 느끼는 경향"
+    },
+    {
+      "A10": "부모님께 용돈을 드렸다",
+      "C10": "→",
+      "D10": "가족·선후배 관계에서 역할을 맡음",
+      "F10": "→",
+      "G10": "사회·역할",
+      "I10": "‘받는 쪽에서 챙기는 쪽으로 바뀐 순간’에서 어른스러움을 느끼는 경향"
+    },
+    {
+      "A12": "중요"
+    },
+    {
+      "A13": "왼쪽의 행동 묶음은 수집 자료를 정리한 결과다. 오른쪽의 6개 결과 경향은 사용자가 재미있게 테스트할 수 있도록 작품에서 단순화한 표현이다. 따라서 ‘어른은 이 6가지다’라고 주장하지 않는다."
+    }
+  ],
+  "limitations": "수집방식은 기존 수집 응답으로 기록되어 있고 수집일은 비어 있음. 연령별 경험 분포나 대표성은 확인할 수 없음. 12행동은 검토안, 6경향은 작품화 표현. B10/B12는 연결 검토 중."
+}

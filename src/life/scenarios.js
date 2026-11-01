@@ -1,3 +1,4 @@
+import { applyResearch } from './research-scenarios.js';
 export const tendencies = ['책임', '자립', '타인배려', '감정조절', '미래지향', '사회·역할'];
 export const temperaments = [
   { id: 'curious', label: '호기심이 많았다', voice: '처음 보는 것 앞에서 눈이 반짝이던 아이. 오늘은 어떤 장면을 만나게 될까요?' },
@@ -13,7 +14,7 @@ export const routes = {
 };
 const option = (id, label, result, tags = [], changes = {}) => ({ id, label, result, tags, changes });
 // Authored prototype fiction based on supplied definitions; no empirical claims.
-export const events = [
+const originalEvents = [
   { id:'play', stage:'어린 시절', age:7, place:'놀이터', title:'조금만 더 놀고 싶은 날', text:'집에 가기로 한 시간이 다가와요. 친구가 마지막으로 한 번만 더 놀자고 손을 잡습니다.', options:[
     option('promise','약속한 시간에 돌아간다','아쉬워서 몇 번이나 뒤돌아봤어요. 집 앞에 도착하자 기다리던 사람이 손을 흔들어요.',['책임'],{anchor:'promise'}),
     option('ask','집에 연락해 조금 늦어도 되는지 묻는다','혼자 정하지 않고 이야기를 나눴어요. 조금 더 놀 수 있는 시간이 생겼습니다.',['사회·역할'],{anchor:'talk'}),
@@ -71,6 +72,7 @@ export const events = [
     option('accept','오늘의 마음을 있는 그대로 적는다','잘한 일과 어려웠던 일을 함께 적었어요. 오늘의 나를 조금 더 알게 됩니다.',['감정조절']),
   ]},
 ];
+export const events = applyResearch(originalEvents);
 export function getEvent(index, profile, flags = {}) {
   const base = events[index];
   const age = index < 7 ? base.age : 19 + Math.floor((profile.age - 19) * (index - 6) / 5);
@@ -78,7 +80,8 @@ export function getEvent(index, profile, flags = {}) {
   let text = base.text;
   if (base.id === 'shared' && route) text = `${route.place}에서 ${route.group}과 ${route.task}을 맡았어요. ${text}`;
   if (base.id === 'difficulty') text = `${flags.help === 'alone' ? '어릴 때 부서진 물건을 직접 고쳐보려 했던 날이 떠올라요.' : '어릴 때 부서진 물건 앞에서 함께 도움을 나눴던 날이 떠올라요.'} ${text}`;
-  if (base.id === 'promise') text = `${({promise:'일곱 살, 놀이터에서 약속을 지키러 돌아갔던 나.',talk:'일곱 살, 더 놀고 싶어 집에 연락했던 나.',freedom:'일곱 살, 놀이를 마치고 마음을 설명했던 나.'})[flags.anchor] || ''} ${text}`;
-  if (base.id === 'weekend' && flags.planning) text = `열여덟 살에 길을 하나씩 적어보던 습관이 문득 떠올라요. ${text}`;
+  if (base.id === 'promise') text = `${({promise:'일곱 살, 놀이터에서 약속을 지키러 돌아갔던 나.',talk:'일곱 살, 더 놀고 싶어 집에 연락했던 나.',listen:'일곱 살, 친구의 이야기를 먼저 들었던 나.'})[flags.anchor] || ''} ${text}`;
+  if (base.id === 'weekend' && flags.planning) text = `열여덟 살에 여행 준비물을 적어보던 습관이 문득 떠올라요. ${text}`;
   return { ...base, age, place: base.place === 'route' ? route?.place || '동네' : base.place, text };
 }
+
