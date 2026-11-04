@@ -1,5 +1,5 @@
-import {traits,makeSchedule,getStory} from './narrative.js';
-export const emptyGame={screen:'start',profile:null,environment:null,career:null,initialCareer:null,schedule:[],index:0,phase:'bridge',history:[],choice:null};
+import {traits,annualSchedule as makeSchedule,getStory} from './narrative.js';
+export const emptyGame={screen:'start',profile:null,environment:null,career:null,initialCareer:null,schedule:[],index:0,phase:'event',history:[],choice:null};
 export function gameReducer(s,a){
  if(a.type==='RESET')return {...emptyGame,history:[],schedule:[]};
  if(a.type==='SETUP'&&s.screen==='start')return {...s,screen:'setup'};
@@ -10,11 +10,11 @@ export function gameReducer(s,a){
  if(s.screen!=='play')return s;
  const row=s.schedule[s.index];if(a.id!==row.id||a.phase!==s.phase)return s;
  if(a.type==='ADVANCE'){
- if(s.phase==='transition')return {...s,phase:'bridge'};
+ if(s.phase==='transition')return {...s,phase:row.quiet?'year':'event'};
  if(s.phase==='bridge')return {...s,phase:'event'};
- if(s.phase==='feedback'){
+ if(s.phase==='feedback'||s.phase==='year'){
  if(s.index===s.schedule.length-1)return {...s,screen:'result'};
- return {...s,index:s.index+1,choice:null,phase:row.stage!==s.schedule[s.index+1].stage?'transition':'bridge'};
+ return {...s,index:s.index+1,choice:null,phase:row.stage!==s.schedule[s.index+1].stage?'transition':s.schedule[s.index+1].quiet?'year':'event'};
  }return s;
  }
  if(a.type==='CHOOSE'&&s.phase==='event'){

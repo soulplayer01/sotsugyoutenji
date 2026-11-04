@@ -1,8 +1,10 @@
+import {useTranslation} from './Language.jsx';
 import { motion } from 'motion/react';
 // Replaceable, original SVG placeholder assets; no external images or generation APIs.
 export function Character({stage='어린 시절',appearance='short',reaction=false}) {
+ const t=useTranslation();
  const child=stage==='어린 시절'; const teen=stage==='청소년기';
- return <motion.svg className={`pixel-person ${child?'child':teen?'teen':'adult'}`} viewBox="0 0 32 48" shapeRendering="crispEdges" aria-label={`${stage} 캐릭터`} role="img" animate={{y:reaction?[0,-4,0]:0}} transition={{duration:.45}}>
+ return <motion.svg className={`pixel-person ${child?'child':teen?'teen':'adult'}`} viewBox="0 0 32 48" shapeRendering="crispEdges" aria-label={t(`${stage} 캐릭터`)} role="img" animate={{y:reaction?[0,-4,0]:0}} transition={{duration:.45}}>
  <ellipse cx="16" cy="46" rx="12" ry="2" fill="#534837" opacity=".16"/>
  {appearance==='long'&&<path d="M5 10H27V32H23V29H8V32H5Z" fill="#674537"/>}
  <path d="M7 5H12V3H21V5H25V9H28V21H25V25H7V22H4V11H7Z" fill="#674537"/>
@@ -17,6 +19,7 @@ export function Character({stage='어린 시절',appearance='short',reaction=fal
  </motion.svg>;
 }
 export default function Scene({event,appearance,feedback}) {
+ const t=useTranslation();
  const outside=['놀이터','공원','갈림길','캠퍼스'].includes(event.place);
  return <div className={`pixel-scene ${outside?'outside':'inside'}`}>
  <svg className="scenery" viewBox="0 0 640 260" preserveAspectRatio="xMidYMid slice" shapeRendering="crispEdges" aria-hidden="true">
@@ -32,8 +35,8 @@ export default function Scene({event,appearance,feedback}) {
  <path d="M455 83H466V108H455ZM471 88H483V108H471ZM491 80H505V108H491Z" fill="#c4ceb1"/>
  <path d="M175 177H265V187H175ZM184 187H193V222H184ZM248 187H257V222H248Z" fill="#977663"/>
  </>}
- </svg><span className="place-label">{event.place}</span>
+ </svg><span className="place-label">{t(event.place)}</span>
  <div className="cast"><Character stage={event.stage} appearance={appearance} reaction={Boolean(feedback)}/></div>
- {feedback&&<motion.div className="reaction-bubble" initial={{opacity:0,y:8}} animate={{opacity:1,y:0}}>기억에 남을 작은 순간</motion.div>}
+ {feedback&&<motion.div className="reaction-bubble" initial={{opacity:0,y:8}} animate={{opacity:1,y:0}}>{t("기억에 남을 작은 순간")}</motion.div>}
  </div>;
 }

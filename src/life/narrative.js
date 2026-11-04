@@ -31,6 +31,7 @@ export function makeSchedule(age,route='0'){
  return rows.map(([id,n])=>({id,age:n,stage:n<13?'어린 시절':n<19?'청소년기':'성인기'}));
 }
 export function getStory(row,state){
+ if(row.quiet){const last=state.history.at(-1);return {...row,title:'그 사이의 시간',place:last?.place||'집',bridge:'',text:last?`지난 장면 이후에도 일상은 이어졌어. ${row.age}살의 나를 잠깐 떠올려봐.`:'익숙한 하루들이 이어졌어.',options:[]};}
  const s={...stories[row.id],...row}; const h=id=>state.history.find(x=>x.id===id); const opt=id=>h(id)?.choiceId;
  const env=Number(state.environment||0),career=Number(state.career||0);
  const places=['교실','동네 모임 공간','배움터와 활동 공간','나의 생활 공간'];
@@ -58,4 +59,10 @@ export function getStory(row,state){
  if(row.id==='explore21' && opt('explore20')!=='0')s.options=s.options.map(o=>o.id==='1'?{...o,result:'작년에 관심을 두었던 일을 직접 해보기로 했어. 듣거나 찾아본 것과 실제 하루가 어떻게 다른지 알아가는 시간이었어.'}:o);
  s.variantKey=row.id+':'+s.bridge;
  return s;
+}
+
+// Keep the major-event allocation unchanged; fill only years without a choice.
+export function annualSchedule(age,route='0'){
+ const major=new Map(makeSchedule(age,route).map(row=>[row.age,row]));
+ return Array.from({length:age-6},(_,i)=>{const n=i+7;return major.get(n)||{id:`year-${n}`,age:n,stage:n<13?'어린 시절':n<19?'청소년기':'성인기',quiet:true};});
 }
