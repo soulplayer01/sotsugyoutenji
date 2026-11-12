@@ -9,10 +9,15 @@ const execute = promisify(execFile);
 const categories = ['책임', '자립', '타인배려', '감정조절', '미래지향', '사회·역할'];
 
 export function validateReceipt(body) {
- if (!/^[a-f0-9]{32}$/.test(body.id) || !Array.isArray(body.scores) || body.scores.length !== 6) throw new Error('印刷データが正しくありません。');
- body.scores.forEach((score, index) => {
-  if (score.category !== categories[index] || !['total', 'early', 'adult'].every(key => Number.isFinite(score[key]) && score[key] >= 0 && score[key] <= 100)) throw new Error('印刷データが正しくありません。');
- });
+ if (!/^[a-f0-9]{32}$/.test(body.id)) throw new Error('印刷データが正しくありません。');
+ // scores는 V3 성장형 결과용입니다. 서사형 영수증은 scores 없이 이미지(raster)만 보냅니다.
+ // 값이 있으면 기존과 똑같이 엄격하게 검사합니다.
+ if (body.scores !== undefined) {
+  if (!Array.isArray(body.scores) || body.scores.length !== 6) throw new Error('印刷データが正しくありません。');
+  body.scores.forEach((score, index) => {
+   if (score.category !== categories[index] || !['total', 'early', 'adult'].every(key => Number.isFinite(score[key]) && score[key] >= 0 && score[key] <= 100)) throw new Error('印刷データが正しくありません。');
+  });
+ }
  if (!Number.isInteger(body.height) || body.height < 100 || body.height > 4000 || typeof body.raster !== 'string' || !/^[A-Za-z0-9+/]+={0,2}$/.test(body.raster)) throw new Error('印刷画像が正しくありません。');
  const raster = Buffer.from(body.raster, 'base64');
  if (raster.length !== 48 * body.height) throw new Error('印刷画像が正しくありません。');

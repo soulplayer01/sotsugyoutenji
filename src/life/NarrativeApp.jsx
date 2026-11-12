@@ -5,6 +5,9 @@ import {traits,environments,careerLabels,getStory} from './narrative.js';
 import {emptyGame,gameReducer,reflectionLines} from './gameState.js';
 import Scene,{Character} from './Scene.jsx';
 import TypedStory from './TypedStory.jsx';
+import PrintReceipt from './PrintReceipt.jsx';
+import {summarizeBehaviors} from './behaviorMap.js';
+import {narrativeReceiptLines} from './narrativeReceipt.js';
 export function Setup({onStart}){
  const t=useTranslation();
  const [age,setAge]=useState('25'),[gender,setGender]=useState('지정하지 않음'),[appearance,setAppearance]=useState('short'),[selected,setSelected]=useState([]);
@@ -14,10 +17,20 @@ export function Setup({onStart}){
  <fieldset><legend>{t("캐릭터 외형")}</legend><div className="avatar-options">{[['short','짧은 머리'],['long','긴 머리'],['crop','단정한 머리']].map(([id,label])=><button type="button" aria-label={t(label)} key={id} aria-pressed={id===appearance} onClick={()=>setAppearance(id)}><Character appearance={id}/><span>{t(label)}</span></button>)}</div><p className="muted">{t("성별과 외형은 별개예요. 어느 길이나 행동도 제한하지 않습니다.")}</p></fieldset>
  <fieldset><legend>{t("어린 시절의 나를 표현하는 특성 · 2~3개")}</legend><div className="temperament-options">{traits.map(trait=><button type="button" key={trait} aria-pressed={selected.includes(trait)} disabled={!selected.includes(trait)&&selected.length===3} onClick={()=>toggle(trait)}>{t(trait)}</button>)}</div><p className="muted" role="status">{selected.length}{t("개 선택 · 미래의 행동을 정하는 유형이 아닙니다.")}</p></fieldset><button disabled={selected.length<2} className="solid-button" type="submit">{t("일곱 살의 나로 시작하기 →")}</button></form>;
 }
+function Dots({offered,chosen}){return <span className="dots" role="img" aria-label={`${offered}장면 중 ${chosen}번`}>{Array.from({length:offered},(_,i)=><b key={i} aria-hidden="true">{i<chosen?'●':'○'}</b>)}</span>;}
+// 행동 묶음 연결은 behaviorMap.js의 임시 연결표를 따릅니다. 합계 점수·비율·순위는 만들지 않습니다.
+function Behaviors({history}){
+ const s=summarizeBehaviors(history),period=p=>p.offered?`${p.chosen}/${p.offered}`:'–';
+ return <section className="memory-card"><h2>이번에 고른 행동의 모양</h2><p className="muted">리서치에서 모은 행동 묶음과 이어지는 선택지를 만났던 장면만 셌어요. 장면마다 만난 선택지가 달라서 점수나 순위는 만들지 않았어요.</p>
+ {s.tendencies.length?<div className="count-list">{s.tendencies.map(item=><section key={item.name} className="growth-score"><div className="count-label"><strong>{item.name}</strong><span>{item.offered}장면 중 {item.chosen}번</span></div><Dots offered={item.offered} chosen={item.chosen}/><div className="growth-comparison"><span>어린 시절·청소년기 <b>{period(item.early)}</b></span><span>성인기 <b>{period(item.adult)}</b></span></div></section>)}</div>:<p className="muted">이번 이야기에는 행동 묶음과 이어지는 선택지를 만난 장면이 없었어요.</p>}
+ {s.review.length>0&&<><h3>경향 연결을 검토 중인 행동</h3><ul className="review-list">{s.review.map(item=><li key={item.code}><strong>{item.name}</strong> <span>{item.offered}장면 중 {item.chosen}번</span></li>)}</ul></>}
+ <p className="muted">{s.unlinked}개 장면에서는 행동 묶음과 이어지지 않는 선택을 했어요. 이 선택도 똑같은 기록이에요. 많고 적음이 성숙함의 정도를 뜻하지 않습니다.</p></section>;
+}
 function Ending({state,onReset}){const first=state.history[0],last=state.history.at(-1);return <div className="life-result"><span className="overline">일곱 살부터 {state.profile.age}세까지</span><h1>지나온 시간,<br/>내가 고른 장면들.</h1><p className="result-lead">{environments[Number(state.environment)]}에서 출발해 {careerLabels[Number(state.career)]}의 시간을 살아봤어요. 이 기록은 이번 게임에서 당신이 고른 장면입니다.</p>
  <section className="memory-card"><h2>그때와 지금</h2><div className="comparison"><div><Character stage="어린 시절" appearance={state.profile.appearance}/><h3>{first.age}살의 나</h3><p>{first.label}</p></div><span>→</span><div><Character stage="성인기" appearance={state.profile.appearance}/><h3>{last.age}살의 나</h3><p>{last.label}</p></div></div>{reflectionLines(state.history).map((line,i)=><p className="muted" key={i}>{line}</p>)}</section>
+ <Behaviors history={state.history}/>
  <section><h2>이번에 살아본 인생</h2><ol className="timeline">{state.history.map(h=><li key={h.id}><span className="timeline-age">{h.age}살</span><div><small>{h.stage} · {h.place}</small><h3>{h.title}</h3><p>{h.age}살의 당신이 고른 선택은 ‘{h.label}’입니다.</p><p className="muted">{h.result}</p></div></li>)}</ol></section>
- <section className="last-question"><span className="overline">나에게 남기는 질문</span><h2>당신은 어린 시절의 당신과 얼마나 달라졌나요?</h2><p>바뀐 모습도, 여전히 비슷한 모습도 당신의 시간입니다.</p></section><p className="muted">사건과 후속 이야기는 게임용 창작입니다. 리서치의 경험 기록과 구분하며, 이번 선택은 기존 행동 분류에 억지로 연결하지 않고 미분류로 보존합니다. 성격·성숙도 점수는 없습니다.</p><button className="solid-button" onClick={onReset}>다시 살아보기 ↗</button><p className="muted center">이번 설정과 기록을 모두 비우고 첫 화면으로 돌아갑니다.</p></div>;}
+ <section className="last-question"><span className="overline">나에게 남기는 질문</span><h2>당신은 어린 시절의 당신과 얼마나 달라졌나요?</h2><p>바뀐 모습도, 여전히 비슷한 모습도 당신의 시간입니다.</p></section><p className="muted">사건과 후속 이야기는 게임용 창작입니다. 리서치의 경험 기록과 구분하며, 선택지와 행동 묶음의 연결은 작품 제작용 임시 연결입니다. 성격·성숙도 점수는 없습니다.</p><PrintReceipt lines={narrativeReceiptLines(state)} lang="ko"/><button className="solid-button" onClick={onReset}>다시 살아보기 ↗</button><p className="muted center">이번 설정과 기록을 모두 비우고 첫 화면으로 돌아갑니다.</p></div>;}
 export default function NarrativeApp(){
  const [state,dispatch]=useReducer(gameReducer,emptyGame),[confirm,setConfirm]=useState(false);const focus=useRef(null);
  const row=state.schedule[state.index],event=row?getStory(row,state):null;
@@ -26,7 +39,7 @@ export default function NarrativeApp(){
  useEffect(()=>{if(state.screen!=='play'||state.phase!=='transition'||confirm)return;const timer=setTimeout(()=>dispatch({type:'ADVANCE',id:row.id,phase:'transition'}),1500);return()=>clearTimeout(timer);},[state.screen,state.phase,row?.id,confirm]);
  const key=`${state.screen}-${row?.id||''}-${state.phase==='transition'?'transition':'scene'}`;
  return <MotionConfig reducedMotion="user"><main className={`life-app ${state.screen==='play'?'with-status':''}`}><AnimatePresence mode="wait" initial={false}><motion.div className="life-shell" key={key} initial={{opacity:0,y:8}} animate={{opacity:1,y:0}} exit={{opacity:0,y:-6}} transition={{duration:.18}} onAnimationComplete={()=>{focus.current?.focus({preventScroll:true});window.scrollTo({top:0,behavior:'instant'});}}><div ref={focus} tabIndex={-1} className="screen-focus"/>
- {state.screen==='start'&&<div className="life-start"><span className="overline">짧은 인생, 오래 남을 질문</span><h1>어른이 된 순간</h1><p className="opening-question">나는 언제부터 어른이 되었을까?</p><Scene event={{stage:'어린 시절',place:'공원'}} appearance="short"/><div className="start-copy"><p>어린 시절의 나부터 지금의 나까지.<br/>이번에는 어떤 시간을 살아볼까요?</p><p className="muted">그 나이의 자신을 떠올리며 골라보세요.<br/>정답도, 정해진 성장의 방향도 없습니다.</p></div><button className="solid-button" onClick={()=>dispatch({type:'SETUP'})}>나의 이야기 시작하기 →</button></div>}
+ {state.screen==='start'&&<div className="life-start"><span className="overline">짧은 인생, 오래 남을 질문</span><h1>어른이 된 순간</h1><p className="opening-question">나는 언제부터 어른이 되었을까?</p><Scene event={{stage:'어린 시절',place:'공원'}} appearance="short"/><div className="start-copy"><p>지금 나이를 정하면, 일곱 살부터 지금까지의<br/>장면이 차례로 나와요.</p><p className="muted">장면마다 그 나이의 나라면 어떻게 했을지 떠올려 골라보세요.<br/>정답도, 정해진 성장의 방향도 없습니다.<br/>전시장에서는 끝난 뒤 선택 기록을 영수증으로 가져갈 수 있어요.</p></div><button className="solid-button" onClick={()=>dispatch({type:'SETUP'})}>나의 이야기 시작하기 →</button></div>}
  {state.screen==='setup'&&<Setup onStart={profile=>dispatch({type:'START',profile})}/>}
  {state.screen==='play'&&<><header className="life-header"><div><strong>{row.age}<small>살</small></strong><span>{row.stage}</span></div><div className="time-box"><span>{state.index+1} / {state.schedule.length} 해</span><div className="time-track"><div style={{width:`${(state.index+1)/state.schedule.length*100}%`}}/></div></div><button className="text-button" onClick={()=>setConfirm(true)}>처음으로</button></header>
  <Scene event={event} appearance={state.profile.appearance} feedback={state.phase==='feedback'}/>

@@ -23,17 +23,21 @@ export function receiptLines(scores) {
  return lines;
 }
 
-export async function renderReceipt(scores) {
+export const renderReceipt = scores => renderLines(receiptLines(scores));
+
+// 줄 목록(첫 줄은 큰 제목)을 58mm 프린터용 비트맵으로 만듭니다.
+// 한글은 Noto Sans JP에 글리프가 없어 뒤의 시스템 글꼴로 대체됩니다. 실제 출력은 장비에서 확인이 필요합니다.
+export async function renderLines(rawLines) {
  await document.fonts.load('20px "Noto Sans JP"');
  const canvas = document.createElement('canvas');
  canvas.width = 384; // Typical 58mm printer: 48mm printable area at 203dpi.
  const context = canvas.getContext('2d');
- context.font = '20px "Noto Sans JP", sans-serif';
+ context.font = '20px "Noto Sans JP", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif';
  const lines = [];
- for (const [index, paragraph] of receiptLines(scores).entries()) {
+ for (const [index, paragraph] of rawLines.entries()) {
   const size = index === 0 ? 32 : 20;
   const lineHeight = index === 0 ? 44 : 29;
-  context.font = `${size}px "Noto Sans JP", sans-serif`;
+  context.font = `${size}px "Noto Sans JP", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif`;
   let line = '';
   for (const character of paragraph) {
    if (context.measureText(line + character).width > 360) {
@@ -48,11 +52,11 @@ export async function renderReceipt(scores) {
  context.fillStyle = '#fff';
  context.fillRect(0, 0, canvas.width, canvas.height);
  context.fillStyle = '#000';
- context.font = '20px "Noto Sans JP", sans-serif';
+ context.font = '20px "Noto Sans JP", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif';
  context.textBaseline = 'top';
  let y = 12;
  for (const line of lines) {
-  context.font = `${line.size}px "Noto Sans JP", sans-serif`;
+  context.font = `${line.size}px "Noto Sans JP", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif`;
   context.fillText(line.text, 12, y);
   y += line.lineHeight;
  }
