@@ -1,3 +1,4 @@
+import {zh} from './chinese.js';
 import {growthQuestions} from './growth.js';
 export const japaneseQuestions = [
 ['c1','友達に借りた色鉛筆を返す日です。まだ絵を描き終えていません。','約束の日に返し、残りは別の道具で描きます。','もう少し使ってもよいか、先に友達に聞きます。','絵を仕上げてから返し、その時に説明します。','友達が必要だと言った時に返します。'],
@@ -40,6 +41,17 @@ export const ja = {
 for(const [id,text,...options] of japaneseQuestions){const q=growthQuestions.find(q=>q.id===id);ja[q.text]=text;q.options.forEach((o,i)=>{ja[o.label]=options[i];});}
 export function translate(text,language='ja'){
  if(language==='ko'||typeof text!=='string')return text;
+ if(language==='zh'){
+  if(Object.hasOwn(zh,text))return zh[text];
+  const patterns=[
+   [/^(\d+)살의 나를 만나봅니다\.$/,m=>`一起遇见${m[1]}岁的自己。`],
+   [/^(\d+)살 당시의 자신을 떠올려 골라주세요\.$/,m=>`请回想${m[1]}岁时的自己，再做选择。`],
+   [/^어린 시절·청소년기 대비 ([+-]?[\d.]+)입니다\.$/,m=>`与童年及青少年时期相比，分数变化为${m[1]}。`],
+   [/^(어린 시절|청소년기|성인기) 캐릭터$/,m=>`${zh[m[1]]}的角色`],
+  ];
+  for(const [pattern,format] of patterns){const match=text.match(pattern);if(match)return format(match);}
+  return text;
+ }
  if(Object.hasOwn(ja,text))return ja[text];
  const patterns=[[/^(\d+)살의 나를 만나봅니다\.$/,m=>`${m[1]}歳の自分に出会います。`],[/^(\d+)살 당시의 자신을 떠올려 골라주세요\.$/,m=>`${m[1]}歳の頃の自分を思い出して選んでください。`],[/^어린 시절·청소년기 대비 ([+-]?[\d.]+)입니다\.$/,m=>`子ども・思春期との差は${m[1]}です。`],[/^(어린 시절|청소년기|성인기) 캐릭터$/,m=>`${ja[m[1]]}のキャラクター`]];
  for(const [pattern,format] of patterns){const match=text.match(pattern);if(match)return format(match);}

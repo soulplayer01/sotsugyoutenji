@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
+import {zh,chineseQuestions} from '../src/life/chinese.js';
 import {translate,ja,japaneseQuestions} from '../src/life/translations.js';
 import {growthQuestions,growthInitial,growthReducer,growthScores,growthSchedule} from '../src/life/growth.js';
 test('24 situations and 96 options translated; original strings and scoring data preserved',()=>{
@@ -15,9 +16,9 @@ test('all static active UI translations are covered, including accessibility and
  }
  for(const text of ['20살의 나를 만나봅니다.','60살 당시의 자신을 떠올려 골라주세요.','어린 시절·청소년기 대비 -12.5입니다.','성인기 캐릭터'])assert.ok(!/[가-힣]/.test(translate(text)));
 });
-test('both languages finish 24 questions and produce exactly equal scores without mutating data',()=>{
+test('all three languages finish 24 questions and produce exactly equal scores without mutating data',()=>{
  const before=JSON.stringify(growthQuestions),results=[];
- for(const language of ['ja','ko']){
+ for(const language of ['ja','ko','zh']){
  let state=growthReducer(growthInitial,{type:'START',profile:{age:40}});
  const schedule=growthSchedule(40);
  for(let i=0;i<24;i++){
@@ -27,5 +28,19 @@ test('both languages finish 24 questions and produce exactly equal scores withou
  }
  assert.equal(state.screen,'result');results.push(growthScores(state.answers));assert.deepEqual(growthReducer(state,{type:'RESET'}),growthInitial);
  }
- assert.deepEqual(results[0],results[1]);assert.equal(JSON.stringify(growthQuestions),before);
+ assert.deepEqual(results[0],results[1]);assert.deepEqual(results[0],results[2]);assert.equal(JSON.stringify(growthQuestions),before);
+});
+
+test('Chinese covers all questions, choices, static UI and dynamic messages',()=>{
+ assert.equal(chineseQuestions.length,24);
+ assert.deepEqual(chineseQuestions.map(row=>row[0]),growthQuestions.map(q=>q.id));
+ for(const row of chineseQuestions)assert.equal(row.length,6);
+ for(const text of Object.keys(ja)){
+  assert.ok(zh[text],text);
+  assert.ok(!/[가-힣]/.test(translate(text,'zh')),text);
+ }
+ for(const text of ['20살의 나를 만나봅니다.','60살 당시의 자신을 떠올려 골라주세요.','어린 시절·청소년기 대비 -12.5입니다.','성인기 캐릭터']){
+  assert.notEqual(translate(text,'zh'),text);
+  assert.ok(!/[가-힣]/.test(translate(text,'zh')));
+ }
 });

@@ -35,7 +35,7 @@ export default function Scene({event,appearance,feedback}) {
  <path d="M455 83H466V108H455ZM471 88H483V108H471ZM491 80H505V108H491Z" fill="#c4ceb1"/>
  <path d="M175 177H265V187H175ZM184 187H193V222H184ZM248 187H257V222H248Z" fill="#977663"/>
  </>}
- </svg><span className="place-label">{t(event.place)}</span>
+ </svg>
  <div className="cast"><Character stage={event.stage} appearance={appearance} reaction={Boolean(feedback)}/></div>
  {feedback&&<motion.div className="reaction-bubble" initial={{opacity:0,y:8}} animate={{opacity:1,y:0}}>{t("기억에 남을 작은 순간")}</motion.div>}
  </div>;
